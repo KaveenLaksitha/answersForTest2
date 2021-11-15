@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 
 const Logo = require('../assets/Logo.png')
 
-// import logo from '../assets/Logo.png'
 
 export default function SplashScreen({ navigation }) {
 
+    //set timeout to display splash screen
     useEffect(() => {
 
         setTimeout(() => {
@@ -18,7 +18,6 @@ export default function SplashScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View>
-                {/* <Image/> */}
                 <Image
                     style={styles.logo}
                     source={Logo}
@@ -29,6 +28,7 @@ export default function SplashScreen({ navigation }) {
     )
 }
 
+//styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -46,4 +46,3 @@ const styles = StyleSheet.create({
         fontSize: 36
     }
 })
-

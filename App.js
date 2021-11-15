@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+//importin components
 import List from './Components/List';
 import SplashScreen from './Components/SplashScreen';
 
@@ -34,4 +35,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-

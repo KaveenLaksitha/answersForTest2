@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Modal, StyleSheet, View, Text, TouchableHighlight, Dimensions, Image } from 'react-native'
 
+//getting device window width
 const windowWidth = Dimensions.get('window').width;
 
 const ViewSingleUser = (props) => {
 
     const [modalVisible, setModalVisible] = useState(props.visible);
 
+    //to close the modal
     const closeModal = (bool) => {
         props.changeModalVisibility(bool)
     }
@@ -22,11 +24,9 @@ const ViewSingleUser = (props) => {
         >
             <View style={styles.centeredView}>
 
-                <View style={styles.cutTop} />
+                <View style={styles.topEdge} />
 
                 <View style={styles.modalView}>
-                    <View style={styles.topEdge} />
-                    <View style={styles.bottomEdge} />
                     <View style={styles.horizontal}>
                         <Image
                             style={styles.userImage}
@@ -50,12 +50,13 @@ const ViewSingleUser = (props) => {
                     </TouchableHighlight>
                 </View>
 
-                <View style={styles.cutBottom} />
+                <View style={styles.bottomEdge} />
             </View>
         </Modal >
     )
 }
 
+//styles
 const styles = StyleSheet.create({
 
     centeredView: {
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: 'rgba(0,0,0,0.5)',
     },
-    cutTop: {
+    topEdge: {
         position: "relative",
         width: windowWidth - 30,
         borderLeftColor: "transparent",
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 25,
         borderTopRightRadius: 10
     },
-    cutBottom: {
+    bottomEdge: {
         position: "relative",
         width: windowWidth - 30,
         borderTopWidth: 25,

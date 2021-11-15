@@ -4,6 +4,7 @@ import { ActivityIndicator, FlatList, SafeAreaView, StatusBar, StyleSheet, Modal
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ViewSingleUser } from './modals/ViewSingleUser';
 
+//getting device window width
 const windowWidth = Dimensions.get('window').width;
 
 
@@ -17,7 +18,7 @@ export default function List() {
 
     const [text, onChangeText] = useState("");
 
-
+    //calling getUser function and set data when components loads
     useEffect(() => {
         getUsers();
     }, []);
@@ -55,6 +56,7 @@ export default function List() {
         }
     }
 
+    //function used to search by user ID
     const searchById = async () => {
         if (text === '' || !text) {
             setFilteredData(data)
@@ -74,11 +76,13 @@ export default function List() {
 
     }
 
+    //function to open modal
     const openModal = (user) => {
         setModalData(user)
         changeModalVisibility(true)
     }
 
+    //function to set modal visibility
     const changeModalVisibility = (state) => {
         setModalVisible(state)
     }
@@ -137,6 +141,7 @@ export default function List() {
     )
 }
 
+//styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -171,7 +176,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#52007a",
         justifyContent: "center",
         alignItems: "center",
-        // borderBottomRightRadius: 15,
     },
     btnEdge: {
         position: "absolute",
